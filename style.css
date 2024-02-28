@@ -1,0 +1,946 @@
+/* Defining default styles */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none; /* Removing default styles on link */
+}
+img,
+iframe {
+  max-width: 100%;
+}
+
+/* Default font size for mobile devices */
+html {
+  font-size: 62.5%; /* 10px */
+  font-family: "Inter", sans-serif; /* Defining fonts */
+}
+
+/* Adjust font size for screens wider than 56.25em (900px) */
+@media only screen and (min-width: 56.25em) {
+  html {
+    font-size: 80%; /* Reset to browser default */
+  }
+}
+
+/* Adjust font size for screens wider than 75em (1200px) */
+@media only screen and (min-width: 75em) {
+  html {
+    font-size: 125%; /* 12.5px */
+  }
+}
+
+/* Adjust font size for screens wider than 112.5em (1800px) */
+@media only screen and (min-width: 112.5em) {
+  html {
+    font-size: 150%; /* 15px */
+  }
+}
+
+body {
+  color: #191919; /* Default color is this one */
+}
+
+/* Universal styles start */
+
+.display-mobile {
+  display: inline-block;
+}
+
+.display-desktop {
+  display: none;
+}
+/* Universal styles end */
+
+/* Styles for animation */
+
+.hero-section > *:not(.blank-div) {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.hero-section > *:not(.blank-div).show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initially hide elements */
+.section-one,
+.location-map,
+.about-us-content,
+.before-after,
+.reviews-content,
+form,
+.date-time {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.iPhones-mobile.show {
+  opacity: 1;
+  transform: translate(
+    -50%,
+    0
+  ); /* Move the element to its original position vertically */
+}
+
+.iPhones-desktop {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Reveal elements when they have the 'show' class */
+.section-one.show,
+.location-map.show,
+.about-us-content.show,
+.before-after.show,
+.reviews-content.show,
+form.show,
+.date-time.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.iPhones-desktop.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Hero section styles start */
+
+.hero-section {
+  padding-top: 3.6rem; /* Change styles on desktop */
+  padding-bottom: 6rem; /* Change styles on desktop */
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+    url(images/background-image-mobile.png); /* Linear gradient + background image */
+  background-color: #f0f0f0; /* Fallback background color */
+  background-size: cover; /* Cover the entire header */
+  background-position: center; /* Center the background image */
+  background-repeat: no-repeat; /* Do not repeat the background image */
+  /* Add other styles as needed */
+  /*height: 842px; /* Adjust header height as needed */
+  text-align: center; /* Center align text */
+}
+
+.hero-logo a img {
+  margin-right: 0.2rem;
+}
+
+.hero-title {
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 3.9rem;
+  letter-spacing: 0em;
+  color: #fbfaf2;
+  padding: 0 2rem;
+  margin: 3rem 0;
+}
+
+.hero-content {
+  color: #17dcc7;
+  padding-bottom: 5rem; /* Change styles on desktop */
+}
+
+.hero-subtitle {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 3.4rem;
+  letter-spacing: 0em;
+  margin: 3rem auto 1rem;
+  padding: 0 4rem; /* Change styles on desktop */
+}
+
+.hero-paragraph {
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 2rem;
+  letter-spacing: 0em;
+  margin: 2rem auto;
+  padding: 0 6.5rem; /* Change styles on desktop */
+}
+
+/* Hero section styles end */
+/* How does it work section styles start */
+
+.section-one {
+  background: linear-gradient(114.27deg, #11ced9 5.58%, #17dcc7 58.45%);
+  width: 80%;
+  max-width: 40rem; /* Change styles on desktop */
+  margin: -10rem auto 0;
+  border-radius: 27px; /* Here are used px instead of rem because this needs to be fixed */
+  text-align: center;
+  padding: 4rem 3rem;
+}
+
+.section-one-heading {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 4.4rem;
+  letter-spacing: 0em;
+  padding: 0 3rem;
+}
+
+.section-one-heading::after {
+  content: ""; /* Required for the pseudo-element */
+  display: block; /* Display as a block element */
+  width: 100%; /* Extend the line across the entire width of the container */
+  height: 1px; /* Set the height of the line */
+  background-color: #000000; /* Set the color of the line */
+  margin-top: 1rem; /* Adjust the margin as needed */
+}
+
+.section-one-paragraph {
+  margin: 2rem 0;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.9rem;
+  letter-spacing: 0em;
+  padding: 0 1rem;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column; /* Change styles on desktop to row */
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 0 2rem;
+}
+
+.card {
+  border: 2.45px solid #191919;
+  border-radius: 6px;
+  max-width: 23rem; /* Change styles on desktop */
+  padding: 2rem 3rem;
+}
+
+.card img {
+  width: 5.3rem;
+  margin-bottom: 1rem;
+}
+.card-text {
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 23px;
+  letter-spacing: 0em;
+}
+
+/* How does it work section styles end */
+
+/* About Us section styles start */
+
+.section-two {
+  display: flex;
+  flex-direction: column; /* Change styles on desktop to row */
+  align-items: center;
+  margin: 4rem auto;
+  gap: 4rem;
+}
+
+.location-map {
+  padding: 0 1rem;
+}
+.about-us-content {
+  text-align: center;
+  padding: 2rem 6rem;
+}
+
+.about-us-heading {
+  font-size: 2.9rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: 0em;
+}
+
+.about-us-heading::after {
+  content: ""; /* Required for the pseudo-element */
+  display: block; /* Display as a block element */
+  width: 100%; /* Extend the line across the entire width of the container */
+  height: 1px; /* Set the height of the line */
+  background-color: #000000; /* Set the color of the line */
+  margin-top: 2rem; /* Adjust the margin as needed */
+  margin-bottom: 2rem;
+}
+
+.about-us-subheading {
+  margin: 2rem auto;
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 2.9rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.about-us-paragraph {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  text-align: left;
+}
+/* About Us section styles end */
+
+/* Reviews section styles start */
+.section-three {
+  margin-top: 2rem;
+  padding: 2rem 6rem;
+}
+.before-after {
+  text-align: center;
+  margin: -2rem auto 4rem; /* Change styles on desktop */
+}
+.reviews-content {
+  text-align: center;
+}
+
+.review-card {
+  text-align: left;
+  color: #000000;
+}
+.reviews-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+}
+
+.reviews-heading::after {
+  content: ""; /* Required for the pseudo-element */
+  display: block; /* Display as a block element */
+  width: 100%; /* Extend the line across the entire width of the container */
+  height: 1px; /* Set the height of the line */
+  background-color: #000000; /* Set the color of the line */
+  margin-top: 2rem; /* Adjust the margin as needed */
+  margin-bottom: 2rem;
+}
+.review-header {
+  display: flex;
+  align-items: center;
+}
+
+.review-initials {
+  background-color: #d1f7e7;
+  justify-content: center;
+  align-items: center;
+  width: 61px;
+  height: 61px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+  display: none; /* Change on desktop to display:flex */
+}
+.review-name {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 22px;
+  letter-spacing: 0em;
+}
+
+.review-date {
+  margin-left: auto; /* To push it on the end */
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.4rem;
+  letter-spacing: 0em;
+  color: #5a5a5a;
+}
+
+.review-card img {
+  margin: 2rem auto 1rem;
+}
+
+.review-heading {
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.review-paragraph {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: 0em;
+}
+
+.border-p::after {
+  content: ""; /* Required for the pseudo-element */
+  display: block; /* Display as a block element */
+  width: 100%; /* Extend the line across the entire width of the container */
+  height: 1px; /* Set the height of the line */
+  background-color: #000000; /* Set the color of the line */
+  margin-top: 2rem; /* Adjust the margin as needed */
+  margin-bottom: 2rem;
+}
+
+/* Reviews section styles end */
+
+/* Footer styles start */
+
+.footer {
+  background-color: #191919;
+  padding-bottom: 4rem;
+  position: relative;
+  margin-top: 18rem;
+}
+
+.iPhones-mobile {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translate(-50%, 100px); /* Combined translateX and translateY */
+  opacity: 0;
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.footer-heading {
+  font-size: 3.6rem;
+  font-weight: 700;
+  line-height: 4.4rem;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #17dcc7;
+  padding: 19rem 4rem 1rem;
+  margin-top: 2rem;
+}
+
+.footer-heading::after {
+  content: ""; /* Required for the pseudo-element */
+  display: block; /* Display as a block element */
+  width: 100%; /* Extend the line across the entire width of the container */
+  height: 1px; /* Set the height of the line */
+  background-color: #17dcc7; /* Set the color of the line */
+  margin-top: 2rem; /* Adjust the margin as needed */
+}
+
+.footer form {
+  color: #ffffff;
+  text-align: center;
+  position: relative;
+}
+
+.footer form select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 7px;
+  padding: 1rem 4rem;
+  transition: border-color 0.3s, box-shadow 0.3s; /* Add transition for smooth animation */
+  margin: 2rem auto;
+}
+
+.footer form select:focus {
+  border-color: #17dcc7; /* Change border color */
+  box-shadow: 0 0 5px 2px #17dcc7; /* Add white box shadow */
+}
+
+.footer form select,
+.footer form select option {
+  font-size: 2.1rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  letter-spacing: 0em;
+  text-align: center;
+}
+.footer form select option {
+  background-color: #000000;
+}
+
+.footer form h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 2.4rem;
+  letter-spacing: 0em;
+  margin: 2rem auto;
+}
+
+.footer form input[type="radio"] {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 15px; /* Adjust the size as needed */
+  height: 15px; /* Adjust the size as needed */
+  border: 1.5px solid white; /* Border color */
+  border-radius: 50%; /* Make it round */
+  background-color: transparent; /* Transparent background */
+  outline: none; /* Remove the default focus outline */
+  margin-right: 10px; /* Add spacing between radio buttons */
+  vertical-align: middle; /* Align vertically with text */
+}
+
+.footer form input[type="radio"]:checked {
+  background-color: #17dcc7; /* Change text color when radio button is checked */
+}
+
+.footer form input[type="radio"] {
+  cursor: pointer; /* Change cursor to pointer for radio buttons */
+}
+
+.footer form label {
+  color: #ffffff; /* Text color */
+  vertical-align: middle; /* Align vertically with radio buttons */
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.2rem;
+  letter-spacing: 0em;
+  margin-right: 0.6rem;
+}
+
+/* Style for the input number field */
+input[type="tel"] {
+  padding: 1rem; /* Add padding */
+  margin-top: 0.5rem; /* Add spacing */
+  border: 2px solid #ffffff; /* No border */
+  border-radius: 6px; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in the width */
+  color: #ffffff; /* Text color */
+  background-color: transparent;
+  outline: none; /* Remove the default focus outline */
+  width: 80%;
+  max-width: 400px;
+  font-size: 1.6rem;
+}
+input[type="tel"]:focus {
+  border-color: #17dcc7; /* Change border color */
+  box-shadow: 0 0 5px 2px #17dcc7; /* Add white box shadow */
+}
+
+.date-time {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: #ffffff;
+  width: 80%;
+  margin: 2rem auto 0;
+  padding: 1rem 1.6rem;
+  border-radius: 4.5rem;
+  text-align: center;
+  color: #191919;
+}
+.footer form .date-time h2 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 4.8rem;
+  letter-spacing: 0em;
+}
+
+.input-field {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 29px;
+  letter-spacing: 0em;
+  padding: 0.8rem 1.2rem;
+  text-align: left;
+  color: #191919;
+  border-radius: 21px;
+  border: 3px solid #191919;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.input-field:focus {
+  border-color: #17dcc7; /* Change border color */
+  box-shadow: 0 0 5px 2px #17dcc7; /* Add white box shadow */
+}
+
+.footer form .date-time h3 {
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+#date {
+  background-color: transparent; /* Make background transparent */
+  color: #191919; /* Set text color to white */
+  text-align: center;
+  border: 3px solid #191919;
+  border-radius: 26px;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 38px;
+  letter-spacing: 0em;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Style for the placeholder text */
+#date::placeholder {
+  color: #191919; /* Set placeholder text color to white */
+  text-align: center;
+}
+
+#date:focus {
+  border-color: #17dcc7; /* Change border color */
+  box-shadow: 0 0 5px 2px #17dcc7; /* Add white box shadow */
+}
+
+#time {
+  background-color: transparent; /* Make background transparent */
+  color: #17dcc7; /* Set text color to white */
+  text-align: center;
+  border: 3px solid #17dcc7;
+  border-radius: 26px;
+  width: 100%;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 38px;
+  letter-spacing: 0em;
+  padding: 0.8rem 1.2rem;
+}
+
+/* Style for the placeholder text */
+#time::placeholder {
+  color: #17dcc7; /* Set placeholder text color to white */
+
+  text-align: center;
+}
+#time:focus {
+  border-color: #191919; /* Change border color */
+  box-shadow: 0 0 5px 2px #191919; /* Add white box shadow */
+}
+
+#submit-btn {
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: #17dcc7;
+  color: #191919;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 51.5px;
+  padding: 1rem 2rem;
+  width: 100%;
+  margin: 2rem auto;
+  cursor: pointer;
+}
+
+#submit-btn:hover {
+  background-color: #17dcc8c6;
+}
+/* Footer styles end */
+
+/* Setting styles for tablet  min-width=768px  start */
+
+@media only screen and (min-width: 768px) {
+  /* Styling section one start */
+  .section-one {
+    max-width: 70rem;
+  }
+
+  .cards {
+    flex-direction: row;
+    align-items: stretch; /* Stretch flex items to equal height */
+  }
+
+  .card {
+    padding: 1rem 0.8rem;
+  }
+  .card img {
+    margin: 1rem auto;
+  }
+  .card:last-child img {
+    margin: 2rem auto;
+  }
+
+  /* Styling section one end */
+
+  /* Styling inputs from footer  start */
+  .footer form .date-time .input-field {
+    display: block;
+  }
+  .footer form .date-time .input-field,
+  .footer form .date-time .date-time-input #date,
+  .footer form .date-time .date-time-input #time,
+  .footer form .date-time #submit-btn {
+    width: 400px;
+  }
+  /* Styling inputs from footer  end */
+}
+
+/* Setting styles for tablet  min-width=768px  end */
+
+/* Setting styles for tablet  min-width=1200px start */
+
+@media only screen and (min-width: 1200px) {
+  .footer {
+    margin-top: 10rem;
+  }
+  .footer-heading {
+    padding: 10rem 4rem 1rem;
+  }
+}
+
+/* Setting styles for tablet  min-width=1200px end */
+
+/* Setting styles for desktop  min-width=1400px start */
+@media only screen and (min-width: 1400px) {
+  /* Universal styles start */
+
+  .display-mobile {
+    display: none;
+  }
+
+  .display-desktop {
+    display: inline-block;
+  }
+  /* Universal styles end */
+
+  /* Styles for hero section start */
+
+  .hero-section {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
+      url(images/background-image.png); /* Linear gradient + background image */
+    background-color: #f0f0f0; /* Fallback background color */
+    background-size: cover; /* Cover the entire header */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    padding-bottom: 0;
+  }
+  .hero-title {
+    padding: 0rem 12rem;
+  }
+  .hero-paragraph {
+    margin: 2rem auto 3rem;
+  }
+  .blank-div {
+    height: 24rem;
+    background-color: #000000;
+  }
+  /* Styles for hero section end */
+
+  /* Styles for section one start */
+
+  .section-one {
+    margin-top: -27rem;
+    width: 90%;
+  }
+
+  .section-one-heading::after {
+    content: ""; /* Required for the pseudo-element */
+    display: block; /* Display as a block element */
+    width: 50%; /* Extend the line across the entire width of the container */
+    height: 1px; /* Set the height of the line */
+    background-color: #000000; /* Set the color of the line */
+    margin-top: 1rem; /* Adjust the margin as needed */
+    margin: 1rem auto 0;
+  }
+
+  .section-one-paragraph {
+    margin: 2rem 0 4rem;
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 1.4rem 1rem;
+    margin: 2rem auto;
+  }
+  .card img {
+    width: 4rem;
+  }
+  .card-text {
+    padding: 0 3rem;
+  }
+  .card:last-child img {
+    margin-bottom: 1rem;
+  }
+
+  /* Styles for section one end */
+
+  /* Styles for section two start */
+  .section-two {
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0rem;
+    padding: 1rem;
+  }
+
+  .location-map {
+    flex-grow: 2;
+    width: 100%;
+    text-align: center;
+  }
+  iframe {
+    max-width: 100%;
+    width: 580px;
+    height: 1000px;
+  }
+
+  .about-us-content {
+    flex-grow: 1;
+    width: 100%;
+  }
+  /* Styles for section two end */
+
+  /* Styles for section three start */
+  .section-three {
+    display: flex;
+    align-items: stretch;
+  }
+
+  .before-after {
+    width: 50%;
+    margin-right: 3rem;
+  }
+  .before-after img {
+    height: 941px;
+  }
+  .reviews-content {
+    width: 50%;
+  }
+
+  .review-initials {
+    display: flex;
+    margin-right: 0.8rem;
+  }
+
+  .review-name {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0em;
+  }
+
+  .review-paragraph::after {
+    content: ""; /* Required for the pseudo-element */
+    display: block; /* Display as a block element */
+    width: 100%; /* Extend the line across the entire width of the container */
+    height: 1px; /* Set the height of the line */
+    background-color: #000000; /* Set the color of the line */
+    margin-top: 2rem; /* Adjust the margin as needed */
+    margin-bottom: 2rem;
+  }
+  /* Styles for section three end */
+
+  /* Styles for Footer start */
+  .footer {
+    margin: 0 auto;
+  }
+
+  .footer-heading {
+    margin-top: 0;
+    padding: 4rem 3rem 1rem;
+  }
+  .footer-heading::after {
+    content: ""; /* Required for the pseudo-element */
+    display: block; /* Display as a block element */
+    width: 50%; /* Extend the line across the entire width of the container */
+    height: 1px; /* Set the height of the line */
+    background-color: #17dcc7; /* Set the color of the line */
+    margin: 2rem auto 0; /* Adjust the margin as needed */
+  }
+
+  .footer .iPhones-desktop {
+    position: absolute;
+    left: 0;
+  }
+
+  .footer form {
+    padding: 0 2rem;
+  }
+
+  .footer .select-form,
+  .footer .checkbox-form,
+  .number-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-left: auto;
+  }
+
+  .footer form select {
+    padding: 1rem;
+  }
+
+  .footer .checkbox-form h2 {
+    margin-left: 0;
+  }
+  .footer .checkbox-form h2 span {
+    display: block;
+  }
+  .footer .checkbox-form .labels {
+    margin-right: 6rem;
+  }
+  .footer form input[type="radio"] {
+    width: 30px;
+    height: 30px;
+  }
+  .date-time {
+    width: 1272px;
+    padding: 2rem 6rem;
+    border-radius: 61px;
+    margin: 2rem auto;
+  }
+
+  .number-input input {
+    margin-right: 1rem;
+    max-width: 450px;
+  }
+  .name-email {
+    display: flex;
+    gap: 3rem;
+  }
+
+  .footer form .date-time .input-field,
+  .footer form .date-time .date-time-input #date,
+  .footer form .date-time .date-time-input #time {
+    width: 100%;
+  }
+  .input-field {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 38px;
+    letter-spacing: 0em;
+    padding: 0.8rem 1.2rem;
+    text-align: left;
+    color: #191919;
+    border-radius: 26px;
+    border: 3px solid #191919;
+    margin: 1rem auto;
+  }
+
+  .date-time-input {
+    display: flex;
+    gap: 3rem;
+  }
+  .date-input {
+    flex-grow: 1;
+  }
+  .footer form .date-input h3 {
+    text-align: left;
+  }
+  .footer form .date-time #submit-btn {
+    font-size: 40px;
+    line-height: 48px;
+    width: 556px;
+    margin-top: 2.6rem;
+  }
+
+  /* Styles for Footer end */
+}
+/* Setting styles for desktop  min-width=1400px  end */
+
+/* Setting styles for desktop  min-width=2000px end */
+@media only screen and (min-width: 2000px) {
+  .footer .checkbox-form .labels {
+    margin-right: 13rem;
+  }
+  .number-input input {
+    margin-right: 10rem;
+    max-width: 500px;
+  }
+}
+
+/* Setting styles for desktop  min-width=2000px  end */
