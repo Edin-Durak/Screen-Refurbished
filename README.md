@@ -19,5 +19,11 @@ On the images below, you can see the desktop and mobile versions.
 
 **Desktop view:**
 
+![Scree desktop](https://github.com/Edin-Durak/Screen-Refurbished/assets/138677399/a75315e8-351e-42f0-a30e-765c01ceb832)
+
+
+
 **Mobile view:**
+
+![Screen mobile](https://github.com/Edin-Durak/Screen-Refurbished/assets/138677399/0ab328d4-34f7-4779-8271-438e9893b23b)
 
