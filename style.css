@@ -117,7 +117,7 @@ form.show,
   padding-top: 3.6rem; /* Change styles on desktop */
   padding-bottom: 6rem; /* Change styles on desktop */
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    url(images/background-image-mobile.png); /* Linear gradient + background image */
+    url(images/background-image-mobile.jpg); /* Linear gradient + background image */
   background-color: #f0f0f0; /* Fallback background color */
   background-size: cover; /* Cover the entire header */
   background-position: center; /* Center the background image */
@@ -701,7 +701,7 @@ input[type="tel"]:focus {
 
   .hero-section {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-      url(images/background-image.png); /* Linear gradient + background image */
+      url(images/background-image.jpg); /* Linear gradient + background image */
     background-color: #f0f0f0; /* Fallback background color */
     background-size: cover; /* Cover the entire header */
     background-position: center; /* Center the background image */
